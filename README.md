@@ -1,0 +1,2 @@
+# ltcogbucket
+A Discord bot
