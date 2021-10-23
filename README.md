@@ -25,6 +25,17 @@ In this section we'll be assuming that "!" is your command prefix. You can chang
 * To reduce threat/momentum by 1:
     * `!gm t-1` |  `!gm m-1`
 
+`!poly` or `!roll`: rolls any combination of polyhedral dice with modifier, or rolls SFA challenge dice. "poly" and "roll" are syonyms; you can use either.
+
+* To roll polyhedral dice (yes, you can roll multiple sets at once):
+    * `!poly 1d4 2d6+1 1d100-60`
+* To roll STA challenge dice:
+    * `!roll 4C`
+
+`!choose`: chooses one entry from among a comma-separated list.
+
+* `!choose Rock, Paper, Scissors`
+
 ## Installation and Setup
 
 1. First you will need to have NodeJS installed on your machine. You can find the latest version [here](https://nodejs.org/en/).
