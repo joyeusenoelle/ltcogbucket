@@ -1,11 +1,11 @@
 {
-  "name": "sta-discord-dice-roller",
-  "version": "1.0.0",
+  "name": "ltcogbucket",
+  "version": "0.1.0",
   "description": "Discord roller for Star Wars Adventure RPG",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SkyJedi/STA-Discord-Dice-Roller"
+    "url": "git+https://github.com/joyeusenoelle/ltcogbucket"
   },
   "scripts": {
     "start": "node index.js"
@@ -13,11 +13,11 @@
   "keywords": [
     "discord",
     "bot",
-    "star treak adventures",
+    "star trek adventures",
     "RPG",
     "dice"
   ],
-  "author": "SkyJedi",
+  "author": "Noëlle Anthony",
   "license": "GPL-3.0",
   "dependencies": {
     "discord.js": "^11.4.2",
