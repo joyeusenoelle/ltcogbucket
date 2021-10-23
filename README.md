@@ -5,7 +5,25 @@ A Discord dice roller, originally built to roll dice for the *Star Trek Adventur
 
 ## Usage
 
-Memo to self: update this with information from `help.js`.
+In this section we'll be assuming that "!" is your command prefix. You can change that in [Configuration](#configuration).
+
+`!sta [number of dice] [target number] [(optional) discipline]` - Roll *Star Trek Adventures* dice.
+
+* You're rolling normally, your target number is 15, and you don't have a helpful Focus:
+    * `!sta 2 15`
+* You've bought one die, your target number is 12, you DO have a helpful focus, and your Discipline is 3:
+    * `!sta 3 12 3`
+
+`!gm [command]` - Provides GM tools for *Star Trek Adventures*.
+
+* To display current threat/momentum:
+    * `!gm t`   |  `!gm m`  |  `!gm tm`
+* To set threat/momentum to 5:
+    * `!gm t5`  |  `!gm m5`
+* To increase threat/momentum by 2:
+    * `!gm t+2` |  `!gm m+2`
+* To reduce threat/momentum by 1:
+    * `!gm t-1` |  `!gm m-1`
 
 ## Installation and Setup
 
@@ -39,9 +57,12 @@ Use `config.js` to configure your bot. A sample has been provided; rename it to 
 
 You'll need to set three properties:
 
-  * `token`: This is the Discord login token for your bot, which you collected above in step `2f`. Remember, if you fork this repository, *make sure not to upload your own `config.js` to your fork!*
-  * `prefix`: This is the symbol that the bot uses to recognize commands. Set to "!" by default. (I use "?" because my server has another bot that looks for "!".)
-  * `maxRollsPerDie`: This is the maximum number of dice that the bot will roll per command. Set to 100 by default. If you try to roll more than this, you'll get an error message.
+  * `token`: This is the Discord login token for your bot, which you collected above in step **2f**. Remember, if you fork this repository, *make sure not to upload your own `config.js` to your fork!*
+  * `prefix`: This is the symbol that the bot uses to recognize commands. This is set to "!" by default. (I use "?" because my server has another bot that looks for "!".)
+  * `maxRollsPerDie`: This is the maximum number of dice that the bot will roll per command. This is set to 100 by default. If you try to roll more than this, you'll get an error message.
 
+## License
+
+I prefer the MIT license, but SkyJedi went with the GPL, so here we are. Use of the GPL on this project does not imply support for GNU or Richard Stallman.
 
 *Star Trek Adventures* is produced by [Modiphius Entertainment](https://www.modiphius.net/collections/star-trek-adventures).
