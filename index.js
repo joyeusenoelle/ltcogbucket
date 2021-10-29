@@ -64,6 +64,7 @@ client.on('message', message => {
 			break;
 		case 'd5stats':
 			modules.d5stats(message);
+			break;
 		case 'c':
 		case 'choose':
 			chooser.chooser(message, params);
