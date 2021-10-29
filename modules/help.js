@@ -41,11 +41,21 @@ Examples:
 		case 'sta':
 			message.channel.send(`\`\`\`prolog
 ${config.prefix}sta: rolls Star Trek Adventures dice
-Example:
+Examples:
     You're rolling normally, your target number is 15, and you don't have a helpful Focus:
 	  ${config.prefix}sta 2 15
     You've bought one die, your target number is 12, you DO have a helpful focus, and your Discipline is 3:
 	  ${config.prefix}sta 3 12 3
+\`\`\``);
+			break;
+		case 'd5stats':
+		case 'd5stat':
+			message.channel.send(`\`\`\`prolog
+${config.prefix}d5stats: generates ability scores for D&D 5th edition
+This generates ability scores with the following common method, which generates scores slightly higher than average: 
+Roll 4d6. If any die comes up 1, re-roll it. Continue until no dice have rolled 1. Drop the lowest die and add the rest together.
+Example:
+		${config.prefix}d5stats
 \`\`\``);
 			break;
 		default:
