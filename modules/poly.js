@@ -6,6 +6,7 @@ function poly(message, params) {
 	params.forEach(unit => {
 		let modifier = 0;
 		let reInf = /∞d(\d+).*$/i;
+		let reInfOther = /(/d+)d∞$/i;
 		let reBasic = /(\d+)d(\d+)$/i;
 		let reMod = /(\d+)d(\d+)([\+\-]?\d*)$/i;
 		let reAdv = /(\d+)d(\d+)([kl]{1,2})(\d+)([\+\-]?\d*)$/i;
@@ -17,7 +18,7 @@ function poly(message, params) {
 
 		text += `  \`${unit}\` (`;
 
-		if ((mtch = reInf.exec(unit)) != null) {
+		if ((mtch = reInf.exec(unit)) != null || (mtch = reInfOther.exec(unit)) != null)) {
 			text += 'Total: α0';
 		} else if ((mtch = reBasic.exec(unit)) != null) {
 			// form: xdy
