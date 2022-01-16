@@ -12,6 +12,7 @@ function poly(message, params) {
 		let reAdv = /(\d+)d(\d+)([kl]{1,2})(\d+)([\+\-]?\d*)$/i;
 		let reTgt = /(\d+)d(\d+)([\+\-]?\d*)([><=]{1,2})(\d*)$/i;
 		let reChal = /(\d+)c$/i;
+		let reNom = /d666$/i;
 		let mtch;
 		let rolls = [];
 		let total = 0;
@@ -174,9 +175,9 @@ function poly(message, params) {
 						break;
 				}
 			}
-	                rolls.forEach(roll => {
-	                        text += `${roll}, `;
-	                });
+			rolls.forEach(roll => {
+					text += `${roll}, `;
+			});
 			text = `${text.slice(0,-2)}) (`;
 			results.forEach(result => {
 				total += result;
@@ -206,7 +207,22 @@ function poly(message, params) {
 				}
 				text += `.`;
             }
-
+		} else if ((mtch = reNom.exec(unit)) != null) {
+			let dieType = 6;
+			let total;
+			let rolls = [];
+			text = `${text.slice(0, -2)}: `;
+			for (let j = 0; j < 3; j++) {
+				rolls.push(dice(dieType));
+			}
+			if (rolls == [1, 1, 1]) {
+				text += "1 + 1 = 2, CD 1 - DIVINE INTERVENTION";
+			} else if (rolls == [6, 6, 6]) {
+				text += "6 + 6 = 12, CD 6 - INFERNAL INTERVENTION";
+			} else {
+				total = rolls[0] + rolls[1];
+				text += `${rolls[0]} + ${rolls[1]} = ${total}, CD ${rolls[2]}.`
+			}
 		} else {
 			// put this in once the rest of the branches are coded
 			text = "Dice not recognized."
